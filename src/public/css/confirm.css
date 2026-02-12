@@ -1,0 +1,54 @@
+.contact-form__content {
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #8c7a6a;
+    font-size: 24px;
+}
+
+/* 確認画面 */
+
+.confirm-table  {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.confirm-table__inner {
+    width: 100%;
+}
+
+.confirm-table__row {
+    display: flex;
+}
+
+.confirm-table__header {
+    flex: 1;
+    background-color: #baa899;
+    color: #fff;
+    text-align: left;
+    padding: 15px 25px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.confirm-table__content {
+    flex: 2;
+    border: 1px solid #baa899;
+    padding: 15px 25px;
+}
+
+.confirm-table__content--input {
+    outline: none;
+    border: none;
+    color: #baa899;
+    width: 100%;
+}
+
+.confirm-table__content--text {
+    color: #baa899;
+    width: 100%;
+}
