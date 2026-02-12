@@ -1,13 +1,15 @@
-.contact-form__content {
+.contact-content {
     width: 60%;
     margin: 0 auto;
 }
 
-.section-title {
+.contact-content__title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #8c7a6a;
     font-size: 24px;
+    padding: 40px 0;
+    margin: 0;
 }
 
 

@@ -5,98 +5,122 @@
 @endsection
 
 @section('content')
-<div class="confirm__content">
+<div class="confirm-content">
     <!-- セクションタイトル -->
-    <h2 class="section-title">
+    <h2 class="confirm-content__title">
         Confirm
     </h2>
 
-    <form action="/thanks" method="POST" class="confirm-form" id="confirm">
+    <div class="table-group">
+        <table class="table-group__inner">
+            <!-- お名前 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">お名前</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['last_name'] . ' ' . $content['first_name']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- 性別 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">性別</th>
+                <td class="table-group__content">
+                    <!-- valueの数値によって性別表示を変える -->
+                    <p class="table-group__text">
+                        @php
+                            $genderMap = [1 => '男性', 2 => '女性', 3 => 'その他'];
+                        @endphp
+                        {{ $genderMap[$content['gender']]}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- メールアドレス -->
+            <tr class="table-group__row">
+                <th class="table-group__label">メールアドレス</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['email']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- 電話番号 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">電話番号</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['tel_1'] . $content['tel_2'] . $content['tel_3']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- 住所 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">住所</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['address']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- 建物名 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">建物名</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['building']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- お問い合わせの種類 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">お問い合わせの種類</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">
+                        {{ $content['type']}}
+                    </p>
+                </td>
+            </tr>
+
+            <!-- お名前 -->
+            <tr class="table-group__row">
+                <th class="table-group__label">お問い合わせ内容</th>
+                <td class="table-group__content">
+                    <p class="table-group__text">{{$content['content']}}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- データ送信用フォーム -->
+    <form action="/thanks" method="POST" id="confirm">
         @csrf
-        <div class="confirm-table">
-            <table class="confirm-table__inner">
-                <!-- お名前 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">お名前</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['last_name'] . ' ' . $content['first_name']}}">
-                    </td>
-                </tr>
-
-                <!-- 性別 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">性別</th>
-                    <td class="confirm-table__content">
-                        <!-- valueの数値によって性別表示を変える -->
-                        <input type="text" class="confirm-table__content--input" value="{{$content['gender']}}">
-                    </td>
-                </tr>
-
-                <!-- メールアドレス -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">メールアドレス</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['email']}}">
-                    </td>
-                </tr>
-
-                <!-- 電話番号 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">電話番号</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['tel_1'] . $content['tel_2'] . $content['tel_3']}}">
-                    </td>
-                </tr>
-
-                <!-- 住所 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">住所</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['address']}}">
-                    </td>
-                </tr>
-
-                <!-- 建物名 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">建物名</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['building']}}">
-                    </td>
-                </tr>
-
-                <!-- お問い合わせの種類 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">お問い合わせの種類</th>
-                    <td class="confirm-table__content">
-                        <input type="text" class="confirm-table__content--input" value="{{$content['type']}}">
-                    </td>
-                </tr>
-
-                <!-- お名前 -->
-                <tr class="confirm-table__row">
-                    <th class="confirm-table__header">お問い合わせ内容</th>
-                    <td class="confirm-table__content">
-                        <input type="hidden" class="confirm-table__content--input" value="{{$content['content']}}">
-                        <p class="confirm-table__content--text">{{$content['content']}}</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        @foreach($content as $key => $value)
+            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+        @endforeach
     </form>
 
-    <form action="/correction" method="POST" class="confirm-form" id="correction">
+    <form action="/" method="POST" id="correction">
         @csrf
+        @foreach($content as $key => $value)
+            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+        @endforeach
     </form>
 
-    <div class="confirm__button">
-        <button class="confirm__button--submit" type="submit" form="confirm">
+    <!-- ボタン -->
+    <div class="confirm-content__button">
+        <button class="confirm-content__button--submit" type="submit" form="confirm">
             送信
         </button>
 
-        <button class="confirm__button--correction" type="submit" form="correction">
+        <button class="confirm-content__button--correction" type="submit" form="correction">
             修正
         </button>
     </div>
-
 </div>
 @endsection

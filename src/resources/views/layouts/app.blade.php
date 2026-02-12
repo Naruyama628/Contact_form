@@ -15,12 +15,18 @@
     <header class="header">
         <!-- ヘッダーロゴ -->
         <div class="header__inner">
+            <div class="header__spacer">
+                <!-- 中央寄せ用のダミーカラム -->
+            </div>
+
             <a class="header__logo" href="/">
                 FashionablyLate
             </a>
 
             <!-- ユーザー認証用ボタン -->
-            @yield('auth')
+            <div class="header__auth">
+                @yield('auth')
+            </div>
         </div>
     </header>
 
