@@ -1,0 +1,134 @@
+.contact-form__content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #8c7a6a;
+    font-size: 24px;
+}
+
+
+/* 入力フォーム */
+.form {
+    width: 100%;
+}
+
+.form__group {
+    display: flex;
+    margin: 30px 0;
+}
+
+.form__group-label {
+    width: 40%;
+}
+
+.form__label {
+    color: #8c7a6a;
+}
+
+.form__label--required {
+    color: #f00;
+    padding: 0px 5px;
+}
+
+.form__group-content {
+    width: 60%;
+    display: flex;
+    gap: 30px;
+}
+
+.form__group-content--tel {
+    display: flex;
+    width: 60%;
+    gap: 8px;
+}
+
+.form__input {
+    color: #8c7a6a;
+    background-color: #f4f4f4;
+    border: none;
+    outline: none;
+    padding: 10px 0 10px 20px;
+}
+
+.form__input--text {
+    flex: 1;
+}
+
+.form__input--radio {
+    display: none
+}
+
+.radio-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-button__circle {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #8c7a6a;
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio-button__circle::after {
+    display: block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #8c7a6a;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.radio-button__text {
+    margin-left: 10px;
+    color: #8c7a6a;
+}
+
+.radio-button input:checked+.radio-button__circle::after {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.form__input--tel {
+    flex: 1;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.form__sep {
+    color: #999;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.form__select {
+    width: 50%;
+}
+
+.form__textarea {
+    width: 100%;
+    height: 130px;
+    resize: none;
+}
+
+.form__button {
+    text-align: center;
+}
+
+.form__button--submit {
+    padding: 10px 40px;
+    background-color: #82756b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.header {
+    background-color: #fff;
+    border-bottom: 3px solid #f5f5f5;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 1230px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #8c7a6a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+}
+
+.auth-form {
+    width: auto;
+}
+
+.auth-form__button {
+    font-family: 'Playfair Display', serif;
+    color: #e3d6cb;
+    background-color: #f6f6f6;
+    border: 1px solid #e3d6cb;
+    border-radius: 3px;
+    padding: 5px 0;
+    width: 100px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ContactController::class, 'contact']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/thanks', [ContactController::class, 'thanks']);
+Route::get('/admin', [ContactController::class, 'admin']);
+Route::get('/search', [ContactController::class, 'search']);
+//reset
+//delete
+Route::get('/register', [ContactController::class, 'register']);
+Route::get('/login', [ContactController::class, 'login']);
+//logout
+///export 応用
+
+Route::post('/correction', [ContactController::class, 'correction']);
