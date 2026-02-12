@@ -14,4 +14,14 @@
 
 @section('content')
 <h2 class="">confirm</h2>
+
+<button class="open-button" popovertarget="sample_popover" popovertargetaction="show"> 開く </button>
+
+<div id="sample_popover" popover>
+    <p>sample</p>
+</div>
+
+<form action="">
+    <input type="date">
+</form>
 @endsection

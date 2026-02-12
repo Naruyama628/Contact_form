@@ -7,10 +7,9 @@
     margin: 0 auto;
     padding: 20px 0;
     max-width: 1230px;
-    text-align: center;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
 }
 
 .header__logo {
@@ -21,6 +20,11 @@
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 0.05em;
+    justify-self: center;
+}
+
+.header__auth {
+    justify-self: end;
 }
 
 .auth-form {
