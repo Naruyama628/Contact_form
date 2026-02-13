@@ -2,12 +2,12 @@ body {
     background-color: #f1ece6;
 }
 
-.login-content {
+.login {
     width: 60%;
     margin: 0 auto;
 }
 
-.login-content__title {
+.login__title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #8c7a6a;

@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="contact-content">
+<div class="contact">
     <!-- セクションタイトル -->
-    <h2 class="contact-content__title">
+    <h2 class="contact__title">
         Contact
     </h2>
 

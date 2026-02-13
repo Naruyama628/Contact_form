@@ -14,9 +14,9 @@
 @endsection
 
 @section('content')
-<div class="register-content">
+<div class="register">
     <!-- セクションタイトル -->
-    <h2 class="register-content__title">
+    <h2 class="register__title">
         Register
     </h2>
 

@@ -1,9 +1,9 @@
-.confirm-content {
+.confirm {
     width: 60%;
     margin: 0 auto;
 }
 
-.confirm-content__title {
+.confirm__title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #8c7a6a;
@@ -45,14 +45,14 @@
     margin: 0;
 }
 
-.confirm-content__button {
+.confirm__button {
     display: flex;
     width: 20%;
     margin: 50px auto;
     justify-content: space-between;
 }
 
-.confirm-content__button--submit {
+.confirm__button--submit {
     background-color: #baa899;
     padding: 5px 30px;
     color: #fff;
@@ -60,7 +60,7 @@
     cursor: pointer;
 }
 
-.confirm-content__button--correction {
+.confirm__button--correction {
     background-color: #fff;
     padding: 5px 30px;
     color: #baa899;

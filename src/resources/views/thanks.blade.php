@@ -12,20 +12,20 @@
 
 <body>
     <main>
-        <div class="thanks-content">
-            <div class="thanks-content__text">
+        <div class="thanks">
+            <div class="thanks__text">
                 お問い合わせありがとうございました
             </div>
 
-            <div class="thanks-content__button">
+            <div class="thanks__button">
                 <form action="/" method="get">
-                    <button class="thanks-content__button--submit">
+                    <button class="thanks__button--submit">
                         HOME
                     </button>
                 </form>
             </div>
 
-            <div class="thanks-content__background">
+            <div class="thanks__background">
                 Thank You
             </div>
         </div>

@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="confirm-content">
+<div class="confirm">
     <!-- セクションタイトル -->
-    <h2 class="confirm-content__title">
+    <h2 class="confirm__title">
         Confirm
     </h2>
 
@@ -113,12 +113,12 @@
     </form>
 
     <!-- ボタン -->
-    <div class="confirm-content__button">
-        <button class="confirm-content__button--submit" type="submit" form="confirm">
+    <div class="confirm__button">
+        <button class="confirm__button--submit" type="submit" form="confirm">
             送信
         </button>
 
-        <button class="confirm-content__button--correction" type="submit" form="correction">
+        <button class="confirm__button--correction" type="submit" form="correction">
             修正
         </button>
     </div>

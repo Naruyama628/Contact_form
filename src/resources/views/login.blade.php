@@ -14,9 +14,9 @@
 @endsection
 
 @section('content')
-<div class="login-content">
+<div class="login">
     <!-- セクションタイトル -->
-    <h2 class="login-content__title">
+    <h2 class="login__title">
         Login
     </h2>
 

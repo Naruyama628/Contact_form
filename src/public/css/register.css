@@ -2,12 +2,12 @@ body {
     background-color: #f1ece6;
 }
 
-.register-content {
+.register {
     width: 60%;
     margin: 0 auto;
 }
 
-.register-content__title {
+.register__title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #8c7a6a;

@@ -1,0 +1,193 @@
+.admin {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.admin__title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #8c7a6a;
+    font-size: 24px;
+    padding: 40px 0;
+    margin: 0;
+}
+
+/* サーチフォーム */
+.search-form {
+    display: flex;
+    gap: 30px;
+}
+
+.search-form__control {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    background: #f4f4f4;
+    color: #8c7a6a;
+    text-align: center;
+    outline: none;
+}
+
+.search-form__control--text {
+    text-align: left;
+    flex: 3;
+}
+
+.search-form__control--narrow {
+    flex: 1;
+}
+
+.search-form__control--wide {
+    flex: 2;
+}
+
+.search-form__control--date {
+    flex: 1.5;
+}
+
+.search-form__control--date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.search-form__field {
+
+    position: relative;
+}
+
+.search-form__field::after {
+    content: "▾";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b7a89a;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.search-form__control--narrow,
+.search-form__control--wide {
+    appearance: none;
+}
+
+.search-form__control--narrow,
+.search-form__control--wide,
+.search-form__control--date {
+    padding-right: 25px;
+}
+
+.search-form__button {
+    flex: 1;
+    background-color: #82756b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form__button--light {
+    background-color: #d9c6b5;
+}
+
+/* ツールバー */
+.admin__toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin__export {
+    background: #f4f4f4;
+    color: #8c7a6a;
+    border: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    margin: 25px 0;
+}
+
+.admin__pagination {
+    width: 100px;
+    background-color: pink;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table__header {
+    background-color: #82756b;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: left;
+}
+
+.admin-table__data {
+    padding: 20px 40px;
+    color: #8c7a6a;
+    border-bottom: 1px solid #8c7a6a;
+}
+
+.admin-table__data:first-child {
+    border-left: 1px solid #8c7a6a;
+}
+
+.admin-table__data:last-child {
+    border-right: 1px solid #8c7a6a;
+}
+
+.admin-table__button {
+    background-color: #fff;
+    color: #8c7a6a;
+    border: 1px solid #8c7a6a;
+    padding: 5px 10px;
+}
+
+/* モーダル */
+#details-modal {
+    width: 40%;
+    border: 1px solid #8c7a6a;
+    padding: 24px;
+}
+
+.close-button {
+    text-align: right;
+}
+
+.close-button__submit {
+    background-color: #fff;
+    color: #8c7a6a;
+    border: 1px solid #8c7a6a;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.details-table {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.details-table__label,
+.details-table__data {
+    padding: 20px 10px;
+    text-align: left;
+    color: #8c7a6a;
+}
+
+.details-table__label {
+    width: 30%;
+}
+
+.details-table__data {
+    width: 70%;
+}
+
+.details-form {
+    text-align: center;
+}
+
+.details-form__submit {
+    padding: 5px 20px;
+    background-color: #ba370d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

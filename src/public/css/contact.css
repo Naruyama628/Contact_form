@@ -1,9 +1,9 @@
-.contact-content {
+.contact {
     width: 60%;
     margin: 0 auto;
 }
 
-.contact-content__title {
+.contact__title {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #8c7a6a;
@@ -11,7 +11,6 @@
     padding: 40px 0;
     margin: 0;
 }
-
 
 /* 入力フォーム */
 .form {
