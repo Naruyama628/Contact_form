@@ -7,6 +7,7 @@
 @section('auth')
     <!-- Loginボタン -->
     <form action="/login" method="get" class="auth-form">
+        @csrf
         <button class="auth-form__button" type="submit">
             Login
         </button>
@@ -20,7 +21,7 @@
         Register
     </h2>
 
-    <form action="" class="form">
+    <form action="/register" method="post" class="form">
         @csrf
         <!-- お名前 -->
         <div class="form__group">
@@ -30,6 +31,11 @@
             </div>
             <div class="form__group-content">
                 <input type="text" class="form__input" name="name" placeholder="例)山田　太郎">
+            </div>
+            <div class="form__group-error">
+                @error('name')
+                    <p class="form__group-error--message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -42,6 +48,11 @@
             <div class="form__group-content">
                 <input type="email" class="form__input" name="email" placeholder="例)test@example.com">
             </div>
+            <div class="form__group-error">
+                @error('email')
+                    <p class="form__group-error--message">{{ $message }}</p>
+                @enderror
+            </div>
         </div>
 
         <!-- パスワード -->
@@ -52,6 +63,11 @@
             </div>
             <div class="form__group-content">
                 <input type="password" class="form__input" name="password" placeholder="例)coachtech1106">
+            </div>
+            <div class="form__group-error">
+                @error('password')
+                    <p class="form__group-error--message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 

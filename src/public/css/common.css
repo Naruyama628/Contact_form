@@ -12,23 +12,18 @@
     grid-template-columns: 1fr auto 1fr;
 }
 
-.header__logo {
-    margin: 0 auto;
-    font-family: 'Playfair Display', serif;
-    color: #8c7a6a;
+.header__link {
     text-decoration: none;
+    justify-self: center;
+    color: #8c7a6a;
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 0.05em;
-    justify-self: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .header__auth {
     justify-self: end;
-}
-
-.auth-form {
-    width: auto;
 }
 
 .auth-form__button {

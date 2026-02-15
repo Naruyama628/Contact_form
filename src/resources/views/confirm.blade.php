@@ -18,7 +18,7 @@
                 <th class="table-group__label">お名前</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['last_name'] . ' ' . $content['first_name']}}
+                        {{ $contents['last_name'] . ' ' . $contents['first_name']}}
                     </p>
                 </td>
             </tr>
@@ -27,12 +27,8 @@
             <tr class="table-group__row">
                 <th class="table-group__label">性別</th>
                 <td class="table-group__content">
-                    <!-- valueの数値によって性別表示を変える -->
                     <p class="table-group__text">
-                        @php
-                            $genderMap = [1 => '男性', 2 => '女性', 3 => 'その他'];
-                        @endphp
-                        {{ $genderMap[$content['gender']]}}
+                        {{ $genderMap[$contents['gender']]}}
                     </p>
                 </td>
             </tr>
@@ -42,7 +38,7 @@
                 <th class="table-group__label">メールアドレス</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['email']}}
+                        {{ $contents['email']}}
                     </p>
                 </td>
             </tr>
@@ -52,7 +48,7 @@
                 <th class="table-group__label">電話番号</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['tel_1'] . $content['tel_2'] . $content['tel_3']}}
+                        {{ $contents['tel_1'] . $contents['tel_2'] . $contents['tel_3']}}
                     </p>
                 </td>
             </tr>
@@ -62,7 +58,7 @@
                 <th class="table-group__label">住所</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['address']}}
+                        {{ $contents['address']}}
                     </p>
                 </td>
             </tr>
@@ -72,7 +68,7 @@
                 <th class="table-group__label">建物名</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['building']}}
+                        {{ $contents['building']}}
                     </p>
                 </td>
             </tr>
@@ -82,16 +78,16 @@
                 <th class="table-group__label">お問い合わせの種類</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $content['type']}}
+                        {{ $categoryMap[$contents['category_id']] }}
                     </p>
                 </td>
             </tr>
 
-            <!-- お名前 -->
+            <!-- お問い合わせ内容 -->
             <tr class="table-group__row">
                 <th class="table-group__label">お問い合わせ内容</th>
                 <td class="table-group__content">
-                    <p class="table-group__text">{{$content['content']}}</p>
+                    <p class="table-group__text">{{$contents['detail']}}</p>
                 </td>
             </tr>
         </table>
@@ -100,14 +96,14 @@
     <!-- データ送信用フォーム -->
     <form action="/thanks" method="POST" id="confirm">
         @csrf
-        @foreach($content as $key => $value)
+        @foreach($contents as $key => $value)
             <input type="hidden" name="{{ $key }}" value="{{ $value }}">
         @endforeach
     </form>
 
     <form action="/" method="POST" id="correction">
         @csrf
-        @foreach($content as $key => $value)
+        @foreach($contents as $key => $value)
             <input type="hidden" name="{{ $key }}" value="{{ $value }}">
         @endforeach
     </form>

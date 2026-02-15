@@ -63,3 +63,8 @@ body {
     border: none;
     cursor: pointer;
 }
+
+.form__group-error--message {
+    color: #f00;
+    font-size: 14px;
+}

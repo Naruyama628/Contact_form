@@ -19,9 +19,9 @@
                 <!-- 中央寄せ用のダミーカラム -->
             </div>
 
-            <a class="header__logo" href="/">
-                FashionablyLate
-            </a>
+            <h1 class="header__logo">
+                <a class="header__link" href="/">FashionablyLate</a>
+            </h1>
 
             <!-- ユーザー認証用ボタン -->
             <div class="header__auth">
