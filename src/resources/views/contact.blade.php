@@ -13,6 +13,7 @@
 
     <form action="/confirm" method="post" class="form">
         @csrf
+
         <!-- お名前 -->
         <div class="form__group">
             <div class="form__group-label">
@@ -20,8 +21,18 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <input type="text" class="form__input form__input--text" name="last_name" placeholder="例)山田">
-                <input type="text" class="form__input form__input--text" name="first_name" placeholder="例)太郎">
+                <div class="form__input-wrapper">
+                    <input type="text" class="form__input form__input--text" name="last_name" placeholder="例)山田" value="{{ old('last_name') }}">
+                    @error('last_name')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="form__input-wrapper">
+                    <input type="text" class="form__input form__input--text" name="first_name" placeholder="例)太郎" value="{{ old('first_name') }}">
+                    @error('first_name')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -32,21 +43,28 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <label class="radio-button">
-                    <input type="radio" class="form__input form__input--radio" name="gender" value="1">
-                    <span class="radio-button__circle"></span>
-                    <span class="radio-button__text">男性</span>
-                </label>
-                <label class="radio-button">
-                    <input type="radio" class="form__input form__input--radio" name="gender" value="2">
-                    <span class="radio-button__circle"></span>
-                    <span class="radio-button__text">女性</span>
-                </label>
-                <label class="radio-button">
-                    <input type="radio" class="form__input form__input--radio" name="gender" value="3">
-                    <span class="radio-button__circle"></span>
-                    <span class="radio-button__text">その他</span>
-                </label>
+                <div class="form__input-wrapper">
+                    <div class="form__input-wrapper--radio">
+                        <label class="radio-button">
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="1" {{ old('gender', '1') == '1' ? 'checked' : ''}}>
+                            <span class="radio-button__circle"></span>
+                            <span class="radio-button__text">男性</span>
+                        </label>
+                        <label class="radio-button">
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="2" {{ old('gender', '1') == '2' ? 'checked' : ''}}>
+                            <span class="radio-button__circle"></span>
+                            <span class="radio-button__text">女性</span>
+                        </label>
+                        <label class="radio-button">
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="3" {{ old('gender', '1') == '3' ? 'checked' : ''}}>
+                            <span class="radio-button__circle"></span>
+                            <span class="radio-button__text">その他</span>
+                        </label>
+                    </div>
+                    @error('gender')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -57,7 +75,12 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <input type="email" class="form__input form__input--text" name="email" placeholder="例)test@example.com">
+                <div class="form__input-wrapper">
+                    <input type="email" class="form__input form__input--text" name="email" placeholder="例)test@example.com" value="{{ old('email') }}">
+                    @error('email')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -68,11 +91,26 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content form__group-content--tel">
-                <input type="tel" class="form__input form__input--tel" name="tel_1" placeholder="080">
+                <div class="form__input-wrapper">
+                    <input type="tel" class="form__input form__input--tel" name="tel_1" placeholder="080" value="{{ old('tel_1') }}">
+                    @error('tel_1')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
                 <span class="form__sep">-</span>
-                <input type="tel" class="form__input form__input--tel" name="tel_2" placeholder="1234">
+                <div class="form__input-wrapper">
+                    <input type="tel" class="form__input form__input--tel" name="tel_2" placeholder="1234" value="{{ old('tel_2') }}">
+                    @error('tel_2')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
                 <span class="form__sep">-</span>
-                <input type="tel" class="form__input form__input--tel" name="tel_3" placeholder="5678">
+                <div class="form__input-wrapper">
+                    <input type="tel" class="form__input form__input--tel" name="tel_3" placeholder="5678" value="{{ old('tel_3') }}">
+                    @error('tel_3')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -83,7 +121,12 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <input type="text" class="form__input form__input--text" name="address" placeholder="例)東京都渋谷区千駄ヶ谷1-2-3">
+                <div class="form__input-wrapper">
+                    <input type="text" class="form__input form__input--text" name="address" placeholder="例)東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}">
+                    @error('address')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -91,10 +134,14 @@
         <div class="form__group">
             <div class="form__group-label">
                 <span class="form__label">建物名</span>
-                <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <input type="text" class="form__input form__input--text" name="building" placeholder="例)駄ヶ谷マンション101">
+                <div class="form__input-wrapper">
+                    <input type="text" class="form__input form__input--text" name="building" placeholder="例)駄ヶ谷マンション101" value="{{ old('building') }}">
+                    @error('building')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -105,11 +152,17 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <select class="form__input form__select" name="type">
-                    <!-- カテゴリテーブルから取得 -->
-                    <option value="">ダミー</option>
-                    <!-- categoryテーブルからデータを取得 -->
-                </select>
+                <div class="form__input-wrapper">
+                    <select class="form__input form__select" name="category_id" value="{{ old('category_id') }}">
+                        <option value="" selected hidden>選択してください</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category['id'] }}" @if( old('category_id') == $category['id'] ) selected @endif > {{ $category['content'] }}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 
@@ -120,8 +173,12 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <!-- この中に入力部分を実装 -->
-                <textarea class="form__input form__textarea" name="content" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                <div class="form__input-wrapper">
+                    <textarea class="form__input form__textarea" name="detail" placeholder="お問い合わせ内容をご記入ください">{{old('detail')}}</textarea>
+                    @error('detail')
+                        <p class="form__error">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
 

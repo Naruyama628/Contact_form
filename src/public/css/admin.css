@@ -23,25 +23,28 @@
     border: 1px solid #ddd;
     background: #f4f4f4;
     color: #8c7a6a;
-    text-align: center;
     outline: none;
 }
 
 .search-form__control--text {
     text-align: left;
     flex: 3;
+    height: 40px;
 }
 
 .search-form__control--narrow {
     flex: 1;
+    height: 40px;
 }
 
 .search-form__control--wide {
     flex: 2;
+    height: 40px;
 }
 
 .search-form__control--date {
     flex: 1.5;
+    height: 40px;
 }
 
 .search-form__control--date::-webkit-calendar-picker-indicator {
@@ -50,7 +53,6 @@
 }
 
 .search-form__field {
-
     position: relative;
 }
 
@@ -83,6 +85,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    height: 40px;
 }
 
 .search-form__button--light {
@@ -105,10 +108,43 @@
 }
 
 .admin__pagination {
-    width: 100px;
-    background-color: pink;
+    width: auto;
+    margin: auto 0;
 }
 
+.admin__pagination nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin__pagination .pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin__pagination .page-item a,
+.admin__pagination .page-item span {
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    color: #8c7a6a;
+    text-decoration: none;
+    background: #fff;
+}
+
+.admin__pagination .page-item.active span {
+    background: #8c7a6a;
+    color: #fff;
+    border-color: #8c7a6a;
+}
+
+.admin__pagination .page-item.disabled span {
+    color: #aaa;
+}
+
+/* テーブル */
 .admin-table {
     width: 100%;
 }
@@ -118,6 +154,10 @@
     color: #fff;
     padding: 20px 40px;
     text-align: left;
+}
+
+.admin-table__row:hover {
+    background-color: #f4f4f4;
 }
 
 .admin-table__data {
@@ -142,17 +182,17 @@
 }
 
 /* モーダル */
-#details-modal {
+.details-modal {
     width: 40%;
     border: 1px solid #8c7a6a;
     padding: 24px;
 }
 
-.close-button {
+.details-modal__close {
     text-align: right;
 }
 
-.close-button__submit {
+.details-modal__close--submit {
     background-color: #fff;
     color: #8c7a6a;
     border: 1px solid #8c7a6a;

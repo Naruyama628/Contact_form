@@ -47,7 +47,23 @@
     gap: 8px;
 }
 
+.form__input-wrapper {
+    width: 100%;
+}
+
+.form__error {
+    color: #f00;
+    font-size: 14px;
+}
+
+.form__input-wrapper--radio {
+    display: flex;
+    gap: 10px;
+    text-align: left;
+}
+
 .form__input {
+    width: 100%;
     color: #8c7a6a;
     background-color: #f4f4f4;
     border: none;
