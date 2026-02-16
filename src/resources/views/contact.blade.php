@@ -11,9 +11,8 @@
         Contact
     </h2>
 
-    <form action="/confirm" method="post" class="form">
+    <form action="/confirm" method="post" class="form" novalidate>
         @csrf
-
         <!-- お名前 -->
         <div class="form__group">
             <div class="form__group-label">
@@ -46,17 +45,17 @@
                 <div class="form__input-wrapper">
                     <div class="form__input-wrapper--radio">
                         <label class="radio-button">
-                            <input type="radio" class="form__input form__input--radio" name="gender" value="1" {{ old('gender', '1') == '1' ? 'checked' : ''}}>
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="1" {{ old('gender', '') == '1' ? 'checked' : ''}}>
                             <span class="radio-button__circle"></span>
                             <span class="radio-button__text">男性</span>
                         </label>
                         <label class="radio-button">
-                            <input type="radio" class="form__input form__input--radio" name="gender" value="2" {{ old('gender', '1') == '2' ? 'checked' : ''}}>
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="2" {{ old('gender', '') == '2' ? 'checked' : ''}}>
                             <span class="radio-button__circle"></span>
                             <span class="radio-button__text">女性</span>
                         </label>
                         <label class="radio-button">
-                            <input type="radio" class="form__input form__input--radio" name="gender" value="3" {{ old('gender', '1') == '3' ? 'checked' : ''}}>
+                            <input type="radio" class="form__input form__input--radio" name="gender" value="3" {{ old('gender', '') == '3' ? 'checked' : ''}}>
                             <span class="radio-button__circle"></span>
                             <span class="radio-button__text">その他</span>
                         </label>

@@ -53,8 +53,14 @@
 
     <!-- ツールバー -->
     <div class="admin__toolbar">
-        <button class="admin__export">エクスポート</button>
-
+        <form action="/export" method="get" class="admin__export-form">
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+            <input type="hidden" name="gender" value="{{ request('gender') }}">
+            <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+            <input type="hidden" name="date" value="{{ request('date') }}">
+            <input type="hidden" name="page" value="{{ request('page', 1) }}">
+            <button class="admin__export" type="submit">エクスポート</button>
+        </form>
         <div class="admin__pagination">
             {{ $contents->links() }}
         </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,12 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
+    Route::get('/search', [ContactController::class, 'search']);
+    Route::get('/reset', [ContactController::class, 'admin']);
+    Route::delete('/delete', [ContactController::class, 'destroy']);
+    Route::get('/export', [ContactController::class, 'export']);
 });
-Route::get('/search', [ContactController::class, 'search']);
-Route::get('/reset', [ContactController::class, 'admin']);
-Route::delete('/delete', [ContactController::class, 'destroy']);
-///export 応用
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/register', [AuthController::class, 'register']);

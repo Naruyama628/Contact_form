@@ -21,7 +21,7 @@
         Register
     </h2>
 
-    <form action="/register" method="post" class="form">
+    <form action="/register" method="post" class="form" novalidate>
         @csrf
         <!-- お名前 -->
         <div class="form__group">
