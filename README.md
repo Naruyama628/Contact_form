@@ -20,12 +20,17 @@ php artisan db:seed
 
 ## 使用技術
 
-PHP 8.2.11
-Laravel 8.83
-MySQL 8.0.26
-nginx 1.21.1
-phpMyAdmin
-Docker / Docker Compose
+- PHP 8.2.11
+
+- Laravel 8.83
+
+- MySQL 8.0.26
+
+- nginx 1.21.1
+
+- phpMyAdmin
+
+- Docker / Docker Compose
 
 ## ER図
 
