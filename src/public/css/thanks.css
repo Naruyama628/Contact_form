@@ -12,11 +12,12 @@
     text-align: center;
     margin-bottom: 30px;
     color: #8c7a6a;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .thanks__button--submit {
-    padding: 5px 30px;
+    padding: 10px 30px;
     background-color: #8c7a6a;
     color: #fff;
     border: none;

@@ -26,12 +26,24 @@ class Contact extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+    public function scopeFullnameSearch($query, $keyword) {
+        if (!empty($keyword)) {
+            $query->whereRaw("CONCAT(last_name, ' ', first_name) LIKE ?", ["%{$keyword}%"]);
+        }
+        return $query;
+    }
+
     public function scopeKeywordSearch($query, $keyword) {
         if (!empty($keyword)) {
             $query->where(function ($q) use ($keyword) {
-                $q->where('last_name', 'like', "%{$keyword}%")
-                ->orWhere('first_name', 'like', "%{$keyword}%")
-                ->orWhere('email', 'like', "%{$keyword}%");
+
+            // フルネーム検索
+            $q->whereRaw("CONCAT(last_name, ' ', first_name) LIKE ?", ["%{$keyword}%"])
+            
+            // 名前・メールの部分一致を OR
+            ->orWhere('last_name', 'like', "%{$keyword}%")
+            ->orWhere('first_name', 'like', "%{$keyword}%")
+            ->orWhere('email', 'like', "%{$keyword}%");
             });
         }
         return $query;
@@ -40,7 +52,7 @@ class Contact extends Model
     public function scopeGenderSearch($query, $gender) {
         if (!empty($gender)) {
             if($gender != 0) {
-                $query->where('gender', 'like', '%' . $gender . '%');
+                $query->where('gender', $gender);
             }
         }
         return $query;
@@ -48,14 +60,14 @@ class Contact extends Model
 
     public function scopeCategorySearch($query, $category_id) {
         if (!empty($category_id)) {
-            $query->where('category_id', 'like', '%' . $category_id . '%');
+            $query->where('category_id', $category_id);
         }
         return $query;
     }
 
     public function scopeDateSearch($query, $date) {
         if (!empty($date)) {
-            $query->where('created_at', 'like', '%' . $date . '%');
+            $query->whereDate('created_at', $date);
         }
         return $query;
     }

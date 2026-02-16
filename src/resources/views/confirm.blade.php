@@ -18,7 +18,7 @@
                 <th class="table-group__label">お名前</th>
                 <td class="table-group__content">
                     <p class="table-group__text">
-                        {{ $contents['last_name'] . ' ' . $contents['first_name']}}
+                        {{ $contents['last_name'] . '　' . $contents['first_name']}}
                     </p>
                 </td>
             </tr>

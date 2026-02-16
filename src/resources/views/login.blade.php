@@ -21,7 +21,7 @@
         Login
     </h2>
 
-    <form action="/login" method="post" class="form">
+    <form action="/login" method="post" class="form" novalidate>
         @csrf
         <!-- メールアドレス -->
         <div class="form__group">
