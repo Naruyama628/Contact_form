@@ -30,7 +30,8 @@ phpMyAdmin
 Docker / Docker Compose
 
 ER図
-[text](README.md)
+
+![alt text](image.png)
 
 URL
 お問い合わせ画面: http://localhost/
